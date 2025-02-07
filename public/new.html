@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Day</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: lightgoldenrodyellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        
+        .wish {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 2rem;
+            color: rgb(11, 13, 11);
+            z-index: 10;
+            animation: moves 10s ;
+        }
+
+        .wish img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+
+        }
+        @keyframes moves {
+        from {top: 700px;}
+        to {top:250px;}
+        }
+
+        
+        .balloon {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            border-radius: 70% 70% 65% 65%;
+            animation: float 10s linear infinite;
+        }
+
+        .balloon:before {
+        content: "";
+        height: 100px;
+        width: 1px;
+        padding: 1px;
+        background-color: #e3e31e;
+        display: flex;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        }
+        
+        .balloon:after {
+        content: "▲";
+        text-align: center;
+        display: block;
+        position: absolute;
+       border-bottom: 0px solid #cccc21;
+        top: 74px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        }
+
+        .balloon:nth-child(1) {
+             background-color: blue; 
+             left: 10%; 
+             animation-delay: 0s; 
+             color:blue;
+            }
+        .balloon:nth-child(2) { 
+            background-color: red; 
+            left: 25%; 
+            animation-delay: 2s; 
+        
+            color: red;
+        }
+        .balloon:nth-child(3) {
+             background-color: yellow; 
+             left: 40%; 
+             animation-delay: 4s; 
+             color: yellow;
+            }
+        .balloon:nth-child(4) { 
+            background-color: green; 
+            left: 55%; 
+            animation-delay: 1s; 
+            color:green;
+        }
+        .balloon:nth-child(5) { 
+            background-color: pink; 
+            left: 70%; 
+            animation-delay: 3s;
+            color: pink;
+         }
+        .balloon:nth-child(6) { 
+            background-color: purple; 
+            left: 85%; 
+            animation-delay: 5s; 
+            color:purple;
+        }
+
+       
+        @keyframes float {
+            0% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-150vh);
+                opacity: 0;
+            }
+        }
+
+        
+        @media (max-width: 768px) {
+            .wish {
+                font-size: 1.5rem;
+            }
+            .wish img {
+                max-width: 150px;
+            }
+            .balloon {
+                width: 60px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+
+        
+        <div class="wish">
+            <img src="./cakePic.jpeg" alt="Birthday Cake">
+            <h4>Happy Birthday!</h4>
+        </div>
+    </div>
+</body>
+</html>
